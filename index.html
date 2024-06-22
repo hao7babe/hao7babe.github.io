@@ -3,60 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rich Structured HTML Example</title>
+    <title>My Personal Homepage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header, footer {
-            background-color: #f4f4f4;
-            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
             text-align: center;
         }
         nav {
-            margin: 10px 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
         main {
             padding: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
+        .section {
+            margin-bottom: 40px;
         }
-        .card {
+        .section h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .intro p {
+            font-size: 1.2em;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills ul li {
+            background-color: #4CAF50;
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .projects .project {
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin: 10px;
+            margin: 10px 0;
             padding: 10px;
-            width: 30%;
+        }
+        .contact form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .contact form div {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form div label {
+            margin-bottom: 5px;
+        }
+        .contact form div input, .contact form div textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact form div textarea {
+            resize: vertical;
+        }
+        .contact form button {
+            grid-column: 1 / -1;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>My Personal Homepage</h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <section>
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et urna nec quam aliquam viverra. Phasellus vehicula quam in eros molestie, nec ve
+        <section id="about" class="section intro">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate web developer with a love for creating dynamic and user-friendly websites. I have experience in HTML, CSS, JavaScript, and various web development frameworks. Welcome to my personal homepage!</p>
+        </section>
+
+        <section id="skills" class="section skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project 1: Portfolio Website</h3>
+                <p>Description: A personal portfolio website to showcase my projects and skills.</p>
+                <a href="https://github.com/yourusername/portfolio-website">View on GitHub</a>
+            </div>
+            <div class="project">
+                <h3>Project 2: Todo List App</h3>
+                <p>Description: A simple and user-friendly todo list application to keep track of tasks.</p>
+                <a href="https://github.com/yourusername/todo-list-app">View on GitHub</a>
+            </div>
+            <div class="project">
+                <h3>Project 3: Weather App</h3>
+                <p>Description: A weather application that provides current weather information for any location.</p>
+                <a href="https://github.com/yourusername/weather-app">View on GitHub</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
+</body>
+</html>
